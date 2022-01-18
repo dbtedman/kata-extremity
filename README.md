@@ -16,6 +16,20 @@ Secure traffic flowing in and out of your WordPress site at its extremity.
 nvm use && make
 ```
 
+## Verification
+
+### Unit
+
+```shell
+make test
+```
+
+Executes unit tests contained within the `test/unit/php` directory.
+
+### Integration
+
+> 🚧 Will be an instance of wp running inside docker compose, that can be spun up for manual verifications or for automated verifications.
+
 ## Design
 
 ### PHP Coding Style

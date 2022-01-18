@@ -5,5 +5,5 @@
     <arg name="error-severity" value="1"/>
     <arg name="warning-severity" value="8"/>
     <file>./src/php</file>
-    <file>./test/unit</file>
+    <file>./test/unit/php</file>
 </ruleset>
