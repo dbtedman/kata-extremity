@@ -1,15 +1,5 @@
 {
     "name": "dbtedman/extremity",
-    "autoload": {
-        "psr-4": {
-            "DBTedman\\Extremity\\": "src/php/"
-        }
-    },
-    "autoload-dev": {
-        "psr-4": {
-            "DBTedman\\ExtremityTest\\": "test/unit/php/"
-        }
-    },
     "authors": [
         {
             "name": "Daniel Tedman",
@@ -20,13 +10,30 @@
         "php": "7.4.*"
     },
     "require-dev": {
+        "mleko/wingman": "^0.3.1",
         "phpunit/phpunit": "9.5.11",
         "roave/security-advisories": "dev-master",
         "squizlabs/php_codesniffer": "3.6.2"
     },
+    "autoload": {
+        "psr-4": {
+            "DBTedman\\Extremity\\": "src/php/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "DBTedman\\ExtremityTest\\": "test/unit/php/"
+        }
+    },
+    "config": {
+        "sort-packages": true
+    },
     "scripts": {
         "format": "phpcbf",
         "lint": "phpcs -p",
-        "test": "phpunit"
+        "test": "phpunit",
+        "post-update-cmd": [
+            "Mleko\\Wingman\\Composer\\EventHandler::format"
+        ]
     }
 }
