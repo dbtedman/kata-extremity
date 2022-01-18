@@ -18,7 +18,18 @@ nvm use && make
 
 ## Verification
 
-### Unit
+### Linting
+
+-   [Prettier](https://prettier.io)
+-   [PHP Code Sniffer](https://github.com/squizlabs/PHP_CodeSniffer)
+
+```shell
+make lint
+```
+
+### Unit Testing
+
+-   [PHPUnit](https://phpunit.de)
 
 ```shell
 make test
@@ -26,7 +37,7 @@ make test
 
 Executes unit tests contained within the `test/unit/php` directory.
 
-### Integration
+### Integration Testing
 
 > 🚧 Will be an instance of wp running inside docker compose, that can be spun up for manual verifications or for automated verifications.
 
