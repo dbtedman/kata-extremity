@@ -45,7 +45,7 @@ Executes unit tests contained within the `test/unit/php` directory.
 make wordpress
 ```
 
-You can then access a live instance of wordpress with extremity plugin installed [http://localhost:8080]( http://localhost:8080).
+You can then access a live instance of wordpress with extremity plugin installed [http://localhost:8080](http://localhost:8080).
 
 ## Design
 
