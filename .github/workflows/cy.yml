@@ -23,5 +23,10 @@ jobs:
               with:
                   node-version-file: ".nvmrc"
                   cache: "pnpm"
+            - uses: "shivammathur/setup-php@v2"
+              with:
+                  php-version: "7.4"
+                  tools: "composer"
             - run: "make install"
             - run: "make lint"
+            - run: "make test"

@@ -3,3 +3,7 @@
 
 # Don't include external dependencies
 /node_modules/
+/vendor/
+
+# Don't include temp files
+/.phpunit.result.cache
