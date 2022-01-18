@@ -4,7 +4,7 @@
 
 [![CI Results](https://github.com/dbtedman/kata-extremity/workflows/ci/badge.svg)](https://github.com/dbtedman/kata-extremity/actions?workflow=ci)
 
-> 🚧 Placeholder
+Secure traffic flowing in and out of your WordPress site at its extremity.
 
 -   [Getting Started](#getting-started)
 -   [Design](#design)
@@ -18,7 +18,14 @@ nvm use && make
 
 ## Design
 
-> 🚧 Placeholder
+### Domain Use Cases
+
+-   Filter traffic
+-   Audit log
+-   Attach required headers inbound and outbound
+-   Filter unwanted headers inbound and outbound
+-   Alert on suspicious behaviour
+-   Apply custom rules
 
 ## License
 
