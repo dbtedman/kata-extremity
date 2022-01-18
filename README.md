@@ -39,7 +39,13 @@ Executes unit tests contained within the `test/unit/php` directory.
 
 ### Integration Testing
 
-> 🚧 Will be an instance of wp running inside docker compose, that can be spun up for manual verifications or for automated verifications.
+> ⚠️ Currently only for manual testing.
+
+```shell
+make wordpress
+```
+
+You can then access a live instance of wordpress with extremity plugin installed [http://localhost:8080]( http://localhost:8080).
 
 ## Design
 

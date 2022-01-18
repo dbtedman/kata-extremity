@@ -1,2 +1,28 @@
 ---
-services: {}
+services:
+    web:
+        build:
+            context: "."
+        container_name: "extremity_web"
+        restart: "always"
+        depends_on:
+            - "db"
+        ports:
+            - "8080:80"
+        environment:
+            WORDPRESS_DB_HOST: "db"
+            WORDPRESS_DB_USER: "extremity"
+            WORDPRESS_DB_PASSWORD: "extremity"
+            WORDPRESS_DB_NAME: "extremity"
+        volumes:
+            - "./:/var/www/html/wp-content/plugins/extremity/"
+    db:
+        image: "mysql:5.7"
+        container_name: "extremity_db"
+        restart: "always"
+        platform: "linux/x86_64"
+        environment:
+            MYSQL_DATABASE: "extremity"
+            MYSQL_USER: "extremity"
+            MYSQL_PASSWORD: "extremity"
+            MYSQL_RANDOM_ROOT_PASSWORD: "1"
