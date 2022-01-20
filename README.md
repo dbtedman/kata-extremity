@@ -53,14 +53,31 @@ You can then access a live instance of wordpress with extremity plugin installed
 
 [PSR-12: Extended Coding Style](https://www.php-fig.org/psr/psr-12/)
 
+### Domain Entities
+
+-   Alert Message
+-   Audit Message
+-   Request
+-   Request Filter
+-   Request Transform
+-   Response
+-   Response Filter
+-   Response Transform
+
 ### Domain Use Cases
 
 -   Filter traffic
--   Audit log
+-   Write event to audit log
 -   Attach required headers inbound and outbound
 -   Filter unwanted headers inbound and outbound
 -   Alert on suspicious behaviour
 -   Apply custom rules
+
+### Gateways
+
+-   WordPress
+-   Audit Log
+-   Alert Receiver
 
 ## License
 
