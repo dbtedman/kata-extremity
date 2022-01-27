@@ -1,6 +1,7 @@
 # Don't touch library code
 /node_modules/
 /vendor/
+/wordpress/
 /pnpm-lock.yaml
 /composer.lock
 

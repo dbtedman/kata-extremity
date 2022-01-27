@@ -1,4 +1,5 @@
 <?php
+
 /**-----------------------------------------------------------------------------
  *
  * Author URI:      https://danieltedman.com
@@ -14,10 +15,13 @@
 declare(strict_types=1);
 
 use DBTedman\Extremity\Extremity;
+use DBTedman\Extremity\Internal\Gateway\WordPressImpl;
 
 // Load external PHP modules from composer, this includes the source code for
 // this plugin and 3rd party libraries.
 include_once(__DIR__ . '/vendor/autoload.php');
 
-$plugin = new Extremity();
+$plugin = new Extremity(
+    new WordPressImpl()
+);
 $plugin->bind();

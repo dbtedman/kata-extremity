@@ -4,6 +4,7 @@
 # Don't include external dependencies
 /node_modules/
 /vendor/
+/wordpress/
 
 # Don't include temp files
 /.phpunit.result.cache

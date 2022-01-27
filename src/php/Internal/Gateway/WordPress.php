@@ -1,0 +1,26 @@
+<?php
+
+namespace DBTedman\Extremity\Internal\Gateway;
+
+interface WordPress
+{
+    /**
+     * https://developer.wordpress.org/reference/functions/add_action/
+     *
+     * @param string $hookName
+     * @param callable $callback
+     * @param int $priority
+     * @return void
+     */
+    public function addAction(string $hookName, callable $callback, int $priority = 10): void;
+
+    /**
+     * https://developer.wordpress.org/reference/functions/add_filter/
+     *
+     * @param string $filterName
+     * @param callable $callback
+     * @param int $priority
+     * @return void
+     */
+    public function addFilter(string $filterName, callable $callback, int $priority = 10): void;
+}
