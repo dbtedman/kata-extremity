@@ -2,7 +2,9 @@
 
 > ⚠️ WARNING: Not production ready code.
 
-[![CI Results](https://github.com/dbtedman/kata-extremity/workflows/ci/badge.svg)](https://github.com/dbtedman/kata-extremity/actions?workflow=ci)
+[![CI GitHub Pipeline](https://img.shields.io/github/workflow/status/dbtedman/kata-extremity/ci?style=for-the-badge&logo=github&label=ci)](https://github.com/dbtedman/kata-extremity/actions/workflows/ci.yml?query=branch%3Amain)
+![language: php](https://img.shields.io/badge/language-php-blue.svg?style=for-the-badge&logo=php)
+![platform: wordpress plugin](https://img.shields.io/badge/platform-wordpress%20plugin-orange.svg?style=for-the-badge&logo=wordpress)
 
 Secure traffic flowing in and out of your WordPress site at its extremity.
 
