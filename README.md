@@ -18,6 +18,12 @@ Secure traffic flowing in and out of your WordPress site at its extremity.
 nvm use && make
 ```
 
+When developing with WordPress, you might need to help your IDE by downloading a copy of WordPress.
+
+```shell
+make help_ide
+```
+
 ## Verification
 
 ### Linting

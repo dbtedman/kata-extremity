@@ -14,6 +14,9 @@ format:
 test:
 	@composer run test
 
+help_ide:
+	@rm -rf ./wordpress/ && curl https://wordpress.org/latest.zip -O && unzip -q latest.zip && rm latest.zip
+
 wordpress:
 	@docker compose down --volumes --rmi local \
 		&& docker compose up --detach \
