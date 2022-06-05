@@ -1,6 +1,7 @@
-# [Kata](https://github.com/dbtedman/kata) // [Extremity](https://github.com/dbtedman/kata-extremity)
+# [Extremity](https://github.com/dbtedman/kata-extremity)
 
-> ⚠️ WARNING: Not production ready code.
+> **⚠️ WARNING:** Not production ready code, instead a [Code Kata](https://github.com/dbtedman#code-kata) intended to
+> hone my programming skills through practice and repetition.
 
 [![CI GitHub Pipeline](https://img.shields.io/github/workflow/status/dbtedman/kata-extremity/ci?style=for-the-badge&logo=github&label=ci)](https://github.com/dbtedman/kata-extremity/actions/workflows/ci.yml)
 [![sast workflow status](https://img.shields.io/github/workflow/status/dbtedman/kata-extremity/sast?style=for-the-badge&logo=github&label=sast)](https://github.com/dbtedman/kata-extremity/actions/workflows/sast.yml)
@@ -10,7 +11,9 @@
 Secure traffic flowing in and out of your WordPress site at its extremity.
 
 -   [Getting Started](#getting-started)
+-   [Verification](#verification)
 -   [Design](#design)
+-   [References](#references)
 -   [License](#license)
 
 ## Getting Started
@@ -70,34 +73,71 @@ You can then access a live instance of wordpress with extremity plugin installed
 
 ### Domain Entities
 
-| Entity              | Notes |
-| :------------------ | :---- |
-| `AlertMessage`      |       |
-| `AuditMessage`      |       |
-| `RequestFilter`     |       |
-| `RequestTransform`  |       |
-| `Request`           |       |
-| `ResponseFilter`    |       |
-| `ResponseTransform` |       |
-| `Response`          |       |
+#### Alert Message
+
+_Placeholder_
+
+#### Audit Message
+
+_Placeholder_
+
+#### Request Filter
+
+_Placeholder_
+
+#### Request Transform
+
+_Placeholder_
+
+#### Request
+
+_Placeholder_
+
+#### Response Filter
+
+_Placeholder_
+
+#### Response Transform
+
+_Placeholder_
+
+#### Response
 
 ### Domain Use Cases
 
-| Use Case                   | Notes |
-| :------------------------- | :---- |
-| `AlertSuspiciousBehaviour` |       |
-| `FilterRequest`            |       |
-| `FilterResponse`           |       |
-| `ModifyRequestHeaders`     |       |
-| `ModifyResponseHeaders`    |       |
+#### Alert Suspicious Behaviour
+
+_Placeholder_
+
+#### Filter Request
+
+_Placeholder_
+
+#### Filter Response
+
+_Placeholder_
+
+#### Modify Request Headers
+
+_Placeholder_
+
+#### Modify Response Headers
+
+_Placeholder_
 
 ### Gateways
 
-| Gateway         | Notes |
-| :-------------- | :---- |
-| `AlertReceiver` |       |
-| `AuditLog`      |       |
-| `WordPress`     |       |
+#### Alert Receiver
+
+_Placeholder_
+
+#### Audit Log
+
+_Placeholder_
+
+#### WordPress
+
+_Placeholder_
 
 ### Security Mitigations
 
@@ -140,6 +180,10 @@ _Placeholder_
 _Placeholder_
 
 #### [A10:2021-Server-Side Request Forgery](https://owasp.org/Top10/A10_2021-Server-Side_Request_Forgery_%28SSRF%29/)
+
+_Placeholder_
+
+## References
 
 _Placeholder_
 
