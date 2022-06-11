@@ -1,5 +1,7 @@
 {
     "name": "dbtedman/extremity",
+    "type": "project",
+    "license": "MIT",
     "authors": [
         {
             "name": "Daniel Tedman",
