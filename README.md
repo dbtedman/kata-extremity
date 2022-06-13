@@ -73,15 +73,21 @@ installed [http://localhost:8080](http://localhost:8080).
 
 -   [PSR-12: Extended Coding Style](https://www.php-fig.org/psr/psr-12/)
 
+### Interaction
+
+#### [Actions](./src/php/Action/)
+
+_Placeholder_
+
+#### [API](./src/php/API/)
+
+HTTP requests to API routes defined in WP-JSON.
+
+#### [Filters](./src/php/Filter/)
+
+_Placeholder_
+
 ### Domain Entities
-
-#### Alert Message
-
-_Placeholder_
-
-#### Audit Message
-
-_Placeholder_
 
 #### [CSP Report](./src/php/Internal/Domain/Entity/CSPReport/)
 
@@ -90,28 +96,6 @@ _Placeholder_
 #### [HTTP Header](./src/php/Internal/Domain/Entity/HTTPHeader/)
 
 _Placeholder_
-
-#### Request Filter
-
-_Placeholder_
-
-#### Request Transform
-
-_Placeholder_
-
-#### Request
-
-_Placeholder_
-
-#### Response Filter
-
-_Placeholder_
-
-#### Response Transform
-
-_Placeholder_
-
-#### Response
 
 ### Domain Use Cases
 
