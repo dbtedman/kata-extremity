@@ -1,4 +1,4 @@
-FROM wordpress:5.9
+FROM wordpress:6.0
 
 RUN apt-get update \
   && apt-get install -y less \

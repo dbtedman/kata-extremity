@@ -67,7 +67,7 @@ installed [http://localhost:8080](http://localhost:8080).
 -   [Docker Desktop](https://www.docker.com/products/docker-desktopm)
 -   [PHP (v7.4)](https://www.php.net) - This version will match
     the [minimum requirements for WordPress](https://en-au.wordpress.org/about/requirements/).
--   [WordPress (v5.9)](https://wordpress.org/)
+-   [WordPress (v6.0)](https://wordpress.org/)
 
 ### Coding Standards
 
