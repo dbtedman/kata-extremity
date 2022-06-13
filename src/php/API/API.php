@@ -9,10 +9,6 @@ use DBTedman\Extremity\Internal\Gateway\WordPress;
 
 class API
 {
-    // TODO: Implement WP-JSON API integration
-    // TODO: /extremity/csp/report-uri
-
-
     private WordPress $wp;
     private CSPResource $cspResource;
 
