@@ -13,4 +13,12 @@ class WordPressImpl implements WordPress
     {
         add_filter($filterName, $callback, $priority);
     }
+
+    /**
+     * @inheritDoc
+     */
+    public function registerRESTRoute(string $route, array $options): bool
+    {
+        return register_rest_route("extremity", $route, $options);
+    }
 }

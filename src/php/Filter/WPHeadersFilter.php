@@ -2,8 +2,8 @@
 
 namespace DBTedman\Extremity\Filter;
 
+use DBTedman\Extremity\Internal\Domain\UseCase\DefineSecurityHeaders;
 use DBTedman\Extremity\Internal\Gateway\WordPress;
-use WP;
 
 /**
  * https://developer.wordpress.org/reference/hooks/wp_headers/
@@ -21,7 +21,13 @@ class WPHeadersFilter
 
     public function bind(): void
     {
-        $this->wp->addFilter(self::WP_HEADERS, function (array $headers, WP $wp) {
+        $this->wp->addFilter(self::WP_HEADERS, function (array $headers) {
+            $useCase = new DefineSecurityHeaders();
+
+            foreach ($useCase->execute() as $item) {
+                $headers[$item->name()] = $item->value();
+            }
+
             return $headers;
         });
     }

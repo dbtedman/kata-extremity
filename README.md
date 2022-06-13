@@ -54,7 +54,7 @@ Executes unit tests contained within the `test/unit/php` directory.
 > ⚠️ Currently only for manual testing.
 
 ```shell
-make wordpress
+make local
 ```
 
 You can then access a live instance of wordpress with extremity plugin installed [http://localhost:8080](http://localhost:8080).
