@@ -2,11 +2,11 @@
 
 declare(strict_types=1);
 
-namespace DBTedman\Extremity\Internal\Domain\UseCase;
+namespace DBTedman\Extremity\Internal\Domain\UseCase\DefineSecurityHeaders;
 
-use DBTedman\Extremity\Internal\Domain\Entity\ContentSecurityPolicy;
-use DBTedman\Extremity\Internal\Domain\Entity\HTTPHeader;
-use DBTedman\Extremity\Internal\Domain\Entity\SimpleHTTPHeader;
+use DBTedman\Extremity\Internal\Domain\Entity\HTTPHeader\ContentSecurityPolicyHTTPHeader;
+use DBTedman\Extremity\Internal\Domain\Entity\HTTPHeader\HTTPHeader;
+use DBTedman\Extremity\Internal\Domain\Entity\HTTPHeader\SimpleHTTPHeader;
 
 class DefineSecurityHeaders
 {
@@ -24,7 +24,7 @@ class DefineSecurityHeaders
         $headers[] = new SimpleHTTPHeader("X-Content-Type-Options", "nosniff");
 
         // https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Content-Security-Policy
-        $headers[] = new ContentSecurityPolicy();
+        $headers[] = new ContentSecurityPolicyHTTPHeader();
 
         return $headers;
     }

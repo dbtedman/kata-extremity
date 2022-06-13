@@ -4,8 +4,8 @@ declare(strict_types=1);
 
 namespace DBTedman\ExtremityTest\Internal\Domain\UseCase;
 
-use DBTedman\Extremity\Internal\Domain\Entity\HTTPHeader;
-use DBTedman\Extremity\Internal\Domain\UseCase\DefineSecurityHeaders;
+use DBTedman\Extremity\Internal\Domain\Entity\HTTPHeader\HTTPHeader;
+use DBTedman\Extremity\Internal\Domain\UseCase\DefineSecurityHeaders\DefineSecurityHeaders;
 use PHPUnit\Framework\TestCase;
 
 class DefineSecurityHeadersTest extends TestCase

@@ -5,8 +5,8 @@ declare(strict_types=1);
 namespace DBTedman\Extremity\API\Resources;
 
 use DBTedman\Extremity\API\Routable;
-use DBTedman\Extremity\Internal\Domain\Entity\CSPReport;
-use DBTedman\Extremity\Internal\Gateway\WordPress;
+use DBTedman\Extremity\Internal\Domain\Entity\CSPReport\CSPReport;
+use DBTedman\Extremity\Internal\Gateway\WordPress\WordPress;
 use JsonException;
 use WP_REST_Request;
 use WP_REST_Response;

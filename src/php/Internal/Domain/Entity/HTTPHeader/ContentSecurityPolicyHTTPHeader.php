@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace DBTedman\Extremity\Internal\Domain\Entity;
+namespace DBTedman\Extremity\Internal\Domain\Entity\HTTPHeader;
 
-class ContentSecurityPolicy implements HTTPHeader
+class ContentSecurityPolicyHTTPHeader implements HTTPHeader
 {
     private array $value = [];
 

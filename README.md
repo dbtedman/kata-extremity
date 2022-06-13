@@ -57,14 +57,16 @@ Executes unit tests contained within the `test/unit/php` directory.
 make local
 ```
 
-You can then access a live instance of wordpress with extremity plugin installed [http://localhost:8080](http://localhost:8080).
+You can then access a live instance of wordpress with extremity plugin
+installed [http://localhost:8080](http://localhost:8080).
 
 ## Design
 
 ### Tech Stack
 
 -   [Docker Desktop](https://www.docker.com/products/docker-desktopm)
--   [PHP (v7.4)](https://www.php.net) - This version will match the [minimum requirements for WordPress](https://en-au.wordpress.org/about/requirements/).
+-   [PHP (v7.4)](https://www.php.net) - This version will match
+    the [minimum requirements for WordPress](https://en-au.wordpress.org/about/requirements/).
 -   [WordPress (v5.9)](https://wordpress.org/)
 
 ### Coding Standards
@@ -121,9 +123,9 @@ _Placeholder_
 
 _Placeholder_
 
-#### Modify Response Headers
+#### [Define Security Headers](src/php/Internal/Gateway/DefineSecurityHeaders/)
 
-_Placeholder_
+Define HTTP Headers to be used in the HTTP Response.
 
 ### Gateways
 
@@ -135,9 +137,9 @@ _Placeholder_
 
 _Placeholder_
 
-#### WordPress
+#### [WordPress](src/php/Internal/Gateway/WordPress/)
 
-_Placeholder_
+Encapsulated interaction with WordPress globally defined functions.
 
 ### Security Mitigations
 
@@ -165,7 +167,8 @@ _Placeholder_
 
 #### [A06:2021-Vulnerable and Outdated Components](https://owasp.org/Top10/A06_2021-Vulnerable_and_Outdated_Components/)
 
-[Snyk](https://snyk.io) scans Gradle and NPM dependencies for know vulnerabilities and creates pull requests to resolve the vulnerabilities when available.
+[Snyk](https://snyk.io) scans Gradle and NPM dependencies for know vulnerabilities and creates pull requests to resolve
+the vulnerabilities when available.
 
 #### [A07:2021-Identification and Authentication Failures](https://owasp.org/Top10/A07_2021-Identification_and_Authentication_Failures/)
 

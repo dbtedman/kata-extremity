@@ -5,7 +5,7 @@ declare(strict_types=1);
 namespace DBTedman\Extremity\API;
 
 use DBTedman\Extremity\API\Resources\CSPResource;
-use DBTedman\Extremity\Internal\Gateway\WordPress;
+use DBTedman\Extremity\Internal\Gateway\WordPress\WordPress;
 
 class API
 {

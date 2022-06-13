@@ -15,7 +15,7 @@
 declare(strict_types=1);
 
 use DBTedman\Extremity\Extremity;
-use DBTedman\Extremity\Internal\Gateway\WordPressImpl;
+use DBTedman\Extremity\Internal\Gateway\WordPress\WordPressImpl;
 
 // Load external PHP modules from composer, this includes the source code for
 // this plugin and 3rd party libraries.

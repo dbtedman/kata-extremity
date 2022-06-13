@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace DBTedman\Extremity\Filter;
 
-use DBTedman\Extremity\Internal\Gateway\WordPress;
+use DBTedman\Extremity\Internal\Gateway\WordPress\WordPress;
 
 class Filter
 {

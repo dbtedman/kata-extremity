@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace DBTedman\Extremity\Internal\Domain\Entity;
+namespace DBTedman\Extremity\Internal\Domain\Entity\CSPReport;
 
 class CSPReport
 {

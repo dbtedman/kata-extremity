@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace DBTedman\ExtremityTest\Internal\Domain\Entity;
 
-use DBTedman\Extremity\Internal\Domain\Entity\SimpleHTTPHeader;
+use DBTedman\Extremity\Internal\Domain\Entity\HTTPHeader\SimpleHTTPHeader;
 use PHPUnit\Framework\TestCase;
 
 class SimpleHTTPHeaderTest extends TestCase

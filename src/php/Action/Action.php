@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace DBTedman\Extremity\Action;
 
-use DBTedman\Extremity\Internal\Gateway\WordPress;
+use DBTedman\Extremity\Internal\Gateway\WordPress\WordPress;
 
 class Action
 {

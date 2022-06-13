@@ -7,7 +7,7 @@ namespace DBTedman\Extremity;
 use DBTedman\Extremity\Action\Action;
 use DBTedman\Extremity\API\API;
 use DBTedman\Extremity\Filter\Filter;
-use DBTedman\Extremity\Internal\Gateway\WordPress;
+use DBTedman\Extremity\Internal\Gateway\WordPress\WordPress;
 
 class Extremity
 {

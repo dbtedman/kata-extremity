@@ -2,8 +2,8 @@
 
 namespace DBTedman\Extremity\Filter;
 
-use DBTedman\Extremity\Internal\Domain\UseCase\DefineSecurityHeaders;
-use DBTedman\Extremity\Internal\Gateway\WordPress;
+use DBTedman\Extremity\Internal\Domain\UseCase\DefineSecurityHeaders\DefineSecurityHeaders;
+use DBTedman\Extremity\Internal\Gateway\WordPress\WordPress;
 
 /**
  * https://developer.wordpress.org/reference/hooks/wp_headers/

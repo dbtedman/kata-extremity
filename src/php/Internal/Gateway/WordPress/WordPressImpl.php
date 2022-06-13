@@ -1,6 +1,6 @@
 <?php
 
-namespace DBTedman\Extremity\Internal\Gateway;
+namespace DBTedman\Extremity\Internal\Gateway\WordPress;
 
 class WordPressImpl implements WordPress
 {
