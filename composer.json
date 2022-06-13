@@ -9,8 +9,8 @@
         }
     ],
     "require": {
-        "php": "7.4.*",
-        "ext-json": "*"
+        "ext-json": "*",
+        "php": "7.4.*"
     },
     "require-dev": {
         "mockery/mockery": "1.5.0",

@@ -10,9 +10,6 @@ class SuspiciousBehaviourFromCSP implements SuspiciousBehaviour
 {
     private CSPReport $report;
 
-    /**
-     * @param string $uri
-     */
     public function __construct(CSPReport $report)
     {
         $this->report = $report;
