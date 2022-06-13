@@ -83,6 +83,14 @@ _Placeholder_
 
 _Placeholder_
 
+#### [CSP Report](./src/php/Internal/Domain/Entity/CSPReport/)
+
+_Placeholder_
+
+#### [HTTP Header](./src/php/Internal/Domain/Entity/HTTPHeader/)
+
+_Placeholder_
+
 #### Request Filter
 
 _Placeholder_
@@ -123,7 +131,7 @@ _Placeholder_
 
 _Placeholder_
 
-#### [Define Security Headers](src/php/Internal/Gateway/DefineSecurityHeaders/)
+#### [Define Security Headers](src/php/Internal/Domain/UseCase/DefineSecurityHeaders/)
 
 Define HTTP Headers to be used in the HTTP Response.
 
