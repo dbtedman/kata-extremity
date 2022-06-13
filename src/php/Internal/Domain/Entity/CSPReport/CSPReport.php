@@ -4,6 +4,10 @@ declare(strict_types=1);
 
 namespace DBTedman\Extremity\Internal\Domain\Entity\CSPReport;
 
+use DBTedman\Extremity\Internal\Domain\Entity\Primitive\Breach;
+use DBTedman\Extremity\Internal\Domain\Entity\Primitive\Guarantee;
+use DBTedman\Extremity\Internal\Domain\Entity\SuspiciousBehaviour\SuspiciousBehaviouralSource;
+
 class CSPReport
 {
     private string $documentUri;
@@ -15,29 +19,39 @@ class CSPReport
     private int $statusCode;
 
     /**
-     * @param string $documentUri
-     * @param string $referrer
-     * @param string $violatedDirective
-     * @param string $effectiveDirective
-     * @param string $originalPolicy
-     * @param string $blockedUri
-     * @param string $statusCode
+     * @param string|null $documentUri
+     * @param string|null $referrer
+     * @param string|null $violatedDirective
+     * @param string|null $effectiveDirective
+     * @param string|null $originalPolicy
+     * @param string|null $blockedUri
+     * @param int|null $statusCode
+     * @throws InvalidCSPReport
      */
     public function __construct(
-        string $documentUri,
-        string $referrer,
-        string $violatedDirective,
-        string $effectiveDirective,
-        string $originalPolicy,
-        string $blockedUri,
-        int $statusCode
+        ?string $documentUri,
+        ?string $referrer,
+        ?string $violatedDirective,
+        ?string $effectiveDirective,
+        ?string $originalPolicy,
+        ?string $blockedUri,
+        ?int $statusCode
     ) {
-        $this->documentUri = $documentUri;
-        $this->referrer = $referrer;
-        $this->violatedDirective = $violatedDirective;
-        $this->effectiveDirective = $effectiveDirective;
-        $this->originalPolicy = $originalPolicy;
-        $this->blockedUri = $blockedUri;
-        $this->statusCode = $statusCode;
+        try {
+            $this->documentUri = Guarantee::isNonEmptyStringOrThrow($documentUri);
+            $this->referrer = Guarantee::isStringOrThrow($referrer);
+            $this->violatedDirective = Guarantee::isNonEmptyStringOrThrow($violatedDirective);
+            $this->effectiveDirective = Guarantee::isNonEmptyStringOrThrow($effectiveDirective);
+            $this->originalPolicy = Guarantee::isNonEmptyStringOrThrow($originalPolicy);
+            $this->blockedUri = Guarantee::isNonEmptyStringOrThrow($blockedUri);
+            $this->statusCode = Guarantee::isPositiveIngerOrThrow($statusCode);
+        } catch (Breach $e) {
+            throw new InvalidCSPReport();
+        }
+    }
+
+    public function documentUri(): string
+    {
+        return $this->documentUri;
     }
 }

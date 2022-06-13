@@ -29,7 +29,8 @@ class ContentSecurityPolicyHTTPHeader implements HTTPHeader
     private function defineDefaultSrc(): string
     {
         // https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Content-Security-Policy/default-src
-        return "default-src 'self' 'unsafe-inline'";
+        return "default-src 'self'";
+//        return "default-src 'self' 'unsafe-inline'";
     }
 
     private function defineReportURI(): string

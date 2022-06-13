@@ -6,6 +6,10 @@ namespace DBTedman\Extremity\API\Resources;
 
 use DBTedman\Extremity\API\Routable;
 use DBTedman\Extremity\Internal\Domain\Entity\CSPReport\CSPReport;
+use DBTedman\Extremity\Internal\Domain\Entity\CSPReport\InvalidCSPReport;
+use DBTedman\Extremity\Internal\Domain\Entity\Primitive\Collection;
+use DBTedman\Extremity\Internal\Domain\Entity\SuspiciousBehaviour\SuspiciousBehaviourFromCSP;
+use DBTedman\Extremity\Internal\Domain\UseCase\AlertSuspiciousBehaviour\AlertSuspiciousBehaviour;
 use DBTedman\Extremity\Internal\Gateway\WordPress\WordPress;
 use JsonException;
 use WP_REST_Request;
@@ -31,7 +35,7 @@ class CSPResource implements Routable
         ]);
     }
 
-    private function captureFromReportURI(WP_REST_Request $request): WP_REST_Response
+    public function captureFromReportURI(WP_REST_Request $request): WP_REST_Response
     {
         $response = new WP_REST_Response();
 
@@ -56,19 +60,30 @@ class CSPResource implements Routable
             return $response;
         }
 
-        $rawReport = array_key_exists("csp-report", $data) ? $data["csp-report"] : [];
+        $rawReport = Collection::value($data, "csp-report", []);
 
-        $report = new CSPReport(
-            array_key_exists("document-uri", $rawReport) ? $rawReport["document-uri"] : "",
-            array_key_exists("referrer", $rawReport) ? $rawReport["referrer"] : "",
-            array_key_exists("violated-directive", $rawReport) ? $rawReport["violated-directive"] : "",
-            array_key_exists("effective-directive", $rawReport) ? $rawReport["effective-directive"] : "",
-            array_key_exists("original-policy", $rawReport) ? $rawReport["original-policy"] : "",
-            array_key_exists("blocked-uri", $rawReport) ? $rawReport["blocked-uri"] : "",
-            array_key_exists("status-code", $rawReport) ? $rawReport["status-code"] : -1
-        );
+        if ($rawReport === []) {
+            $response->set_status(400);
+            return $response;
+        }
 
-        // TODO: Capture report
+        try {
+            $report = new CSPReport(
+                Collection::value($rawReport, "document-uri"),
+                Collection::value($rawReport, "referrer"),
+                Collection::value($rawReport, "violated-directive"),
+                Collection::value($rawReport, "effective-directive"),
+                Collection::value($rawReport, "original-policy"),
+                Collection::value($rawReport, "blocked-uri"),
+                Collection::value($rawReport, "status-code"),
+            );
+        } catch (InvalidCSPReport $e) {
+            $response->set_status(400);
+            return $response;
+        }
+
+        $useCase = new AlertSuspiciousBehaviour();
+        $useCase->execute(new SuspiciousBehaviourFromCSP($report));
 
         $response->set_status(200);
         return $response;

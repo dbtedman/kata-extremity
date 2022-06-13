@@ -97,9 +97,13 @@ _Placeholder_
 
 _Placeholder_
 
+#### [Suspicious Behaviour](./src/php/Internal/Domain/Entity/SuspiciousBehaviour/)
+
+_Placeholder_
+
 ### Domain Use Cases
 
-#### Alert Suspicious Behaviour
+#### [Alert Suspicious Behaviour](./src/php/Internal/Domain/UseCase/AlertSuspiciousBehaviour)
 
 _Placeholder_
 
