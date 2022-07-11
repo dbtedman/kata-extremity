@@ -8,7 +8,7 @@ use DBTedman\Extremity\Internal\Gateway\WordPress\WordPress;
 /**
  * https://developer.wordpress.org/reference/hooks/wp_headers/
  */
-class WPHeadersFilter
+class FilterHeaders
 {
     private const WP_HEADERS = "wp_headers";
 

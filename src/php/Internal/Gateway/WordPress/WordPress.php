@@ -20,9 +20,10 @@ interface WordPress
      * @param string $filterName
      * @param callable $callback
      * @param int $priority
+     * @param int $acceptedArgs
      * @return void
      */
-    public function addFilter(string $filterName, callable $callback, int $priority = 10): void;
+    public function addFilter(string $filterName, callable $callback, int $priority = 10, int $acceptedArgs = 1): void;
 
     /**
      * https://developer.wordpress.org/reference/functions/register_rest_route/
