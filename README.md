@@ -13,7 +13,6 @@ Secure traffic flowing in and out of your WordPress site at its extremity.
 -   [Getting Started](#getting-started)
 -   [Verification](#verification)
 -   [Design](#design)
--   [References](#references)
 -   [License](#license)
 
 ## Getting Started
@@ -73,118 +72,94 @@ installed [http://localhost:8080](http://localhost:8080).
 
 -   [PSR-12: Extended Coding Style](https://www.php-fig.org/psr/psr-12/)
 
-### Interaction
+### Code Organisation
 
-#### [Actions](./src/php/Action/)
-
-_Placeholder_
-
-#### [API](./src/php/API/)
-
-HTTP requests to API routes defined in WP-JSON.
-
-#### [Filters](./src/php/Filter/)
-
-_Placeholder_
-
-### Domain Entities
-
-#### [CSP Report](./src/php/Internal/Domain/Entity/CSPReport/)
-
-_Placeholder_
-
-#### [HTTP Header](./src/php/Internal/Domain/Entity/HTTPHeader/)
-
-_Placeholder_
-
-#### [Suspicious Behaviour](./src/php/Internal/Domain/Entity/SuspiciousBehaviour/)
-
-_Placeholder_
-
-### Domain Use Cases
-
-#### [Alert Suspicious Behaviour](./src/php/Internal/Domain/UseCase/AlertSuspiciousBehaviour)
-
-_Placeholder_
-
-#### Filter Request
-
-_Placeholder_
-
-#### Filter Response
-
-_Placeholder_
-
-#### Modify Request Headers
-
-_Placeholder_
-
-#### [Define Security Headers](src/php/Internal/Domain/UseCase/DefineSecurityHeaders/)
-
-Define HTTP Headers to be used in the HTTP Response.
-
-### Gateways
-
-#### Alert Receiver
-
-_Placeholder_
-
-#### Audit Log
-
-_Placeholder_
-
-#### [WordPress](src/php/Internal/Gateway/WordPress/)
-
-Encapsulated interaction with WordPress globally defined functions.
+| Code                                   | Notes                                           |
+| :------------------------------------- | :---------------------------------------------- |
+| `./src/php/API/**`                     | HTTP requests to API routes defined in WP-JSON. |
+| `./src/php/Hook/**`                    | WP Actions and Filters.                         |
+| `./src/php/Internal/Domain/Entity/**`  |                                                 |
+| `./src/php/Internal/Domain/UseCase/**` |                                                 |
+| `./src/php/Internal/Gateway/**`        |                                                 |
+| `./test/integration/**`                |                                                 |
+| `./test/unit/php/**`                   |                                                 |
 
 ### Security Mitigations
 
-> Initially based on the [OWASP Top 10 - 2021](https://owasp.org/www-project-top-ten/).
+> 💡 Organised around categories from the [OWASP Top 10 - 2021](https://owasp.org/www-project-top-ten/)
+> and [OWASP API Security Top 10 2019](https://owasp.org/www-project-api-security/) projects.
 
 #### [A01:2021-Broken Access Control](https://owasp.org/Top10/A01_2021-Broken_Access_Control/)
 
-_Placeholder_
+-   [GitHub Secret scanning](https://github.com/features/security) detects secrets incorrectly committed into the
+    repository.
 
 #### [A02:2021-Cryptographic Failures](https://owasp.org/Top10/A02_2021-Cryptographic_Failures/)
 
-_Placeholder_
+_No relevant mitigations are in place._
 
-#### [A03:2021-Injection](https://owasp.org/Top10/A03_2021-Injection/)
+#### [A03:2021-Injection](https://owasp.org/Top10/A03_2021-Injection/) + [API8:2019 Injection](https://github.com/OWASP/API-Security/blob/master/2019/en/src/0xa8-injection.md)
 
-_Placeholder_
+-   All user provided data is considered unsafe until proven otherwise.
+-   This plugin defines a [Content Security Policy](https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP). - _Currently in report only mode._
 
 #### [A04:2021-Insecure Design](https://owasp.org/Top10/A04_2021-Insecure_Design/)
 
-_Placeholder_
+_No relevant mitigations are in place._
 
-#### [A05:2021-Security Misconfiguration](https://owasp.org/Top10/A05_2021-Security_Misconfiguration/)
+#### [A05:2021-Security Misconfiguration](https://owasp.org/Top10/A05_2021-Security_Misconfiguration/) + [API7:2019 Security Misconfiguration](https://github.com/OWASP/API-Security/blob/master/2019/en/src/0xa7-security-misconfiguration.md)
 
-_Placeholder_
+-   This plugin defines a [Content Security Policy](https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP). - _Currently in report only mode._
 
 #### [A06:2021-Vulnerable and Outdated Components](https://owasp.org/Top10/A06_2021-Vulnerable_and_Outdated_Components/)
 
-[Snyk](https://snyk.io) scans Gradle and NPM dependencies for know vulnerabilities and creates pull requests to resolve
-the vulnerabilities when available.
+-   [Snyk](https://snyk.io) scans Composer and NPM dependencies for know vulnerabilities and creates pull requests to
+    resolve the vulnerabilities when available.
+-   `roave/security-advisories` package blocks the installation of vulnerable Composer packages.
 
-#### [A07:2021-Identification and Authentication Failures](https://owasp.org/Top10/A07_2021-Identification_and_Authentication_Failures/)
+#### [A07:2021-Identification and Authentication Failures](https://owasp.org/Top10/A07_2021-Identification_and_Authentication_Failures/) + [API2:2019 Broken User Authentication](https://github.com/OWASP/API-Security/blob/master/2019/en/src/0xa2-broken-user-authentication.md)
 
-_Placeholder_
+_No relevant mitigations are in place._
 
 #### [A08:2021-Software and Data Integrity Failures](https://owasp.org/Top10/A08_2021-Software_and_Data_Integrity_Failures/)
 
-_Placeholder_
+-   Third party dependencies are carefully selected and described with explicit version numbers in `composer.json`
+    and `package.json`.
+-   [Snyk](https://snyk.io) or [GitHub Dependabot](https://github.com/features/security) will raise an alert if a
+    suspicious package, or version of a package is being depended upon.
+-   Dependencies required during development are seggregated from those required during operation of this plugin.
 
-#### [A09:2021-Security Logging and Monitoring Failures](https://owasp.org/Top10/A09_2021-Security_Logging_and_Monitoring_Failures/)
+#### [A09:2021-Security Logging and Monitoring Failures](https://owasp.org/Top10/A09_2021-Security_Logging_and_Monitoring_Failures/) + [API10:2019 Insufficient Logging & Monitoring](https://github.com/OWASP/API-Security/blob/master/2019/en/src/0xaa-insufficient-logging-monitoring.md)
 
-_Placeholder_
+_No relevant mitigations are in place._
 
 #### [A10:2021-Server-Side Request Forgery](https://owasp.org/Top10/A10_2021-Server-Side_Request_Forgery_%28SSRF%29/)
 
-_Placeholder_
+_No relevant mitigations are in place._
 
-## References
+#### [API1:2019 Broken Object Level Authorization](https://github.com/OWASP/API-Security/blob/master/2019/en/src/0xa1-broken-object-level-authorization.md)
 
-_Placeholder_
+_No relevant mitigations are in place._
+
+#### [API3:2019 Excessive Data Exposure](https://github.com/OWASP/API-Security/blob/master/2019/en/src/0xa3-excessive-data-exposure.md)
+
+_No relevant mitigations are in place._
+
+#### [API4:2019 Lack of Resources & Rate Limiting](https://github.com/OWASP/API-Security/blob/master/2019/en/src/0xa4-lack-of-resources-and-rate-limiting.md)
+
+_No relevant mitigations are in place._
+
+#### [API5:2019 Broken Function Level Authorization](https://github.com/OWASP/API-Security/blob/master/2019/en/src/0xa5-broken-function-level-authorization.md)
+
+_No relevant mitigations are in place._
+
+#### [API6:2019 Mass Assignment](https://github.com/OWASP/API-Security/blob/master/2019/en/src/0xa6-mass-assignment.md)
+
+_No relevant mitigations are in place._
+
+#### [API9:2019 Improper Assets Management](https://github.com/OWASP/API-Security/blob/master/2019/en/src/0xa9-improper-assets-management.md)
+
+_No relevant mitigations are in place._
 
 ## License
 

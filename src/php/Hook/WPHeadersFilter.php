@@ -1,6 +1,6 @@
 <?php
 
-namespace DBTedman\Extremity\Filter;
+namespace DBTedman\Extremity\Hook;
 
 use DBTedman\Extremity\Internal\Domain\UseCase\DefineSecurityHeaders\DefineSecurityHeaders;
 use DBTedman\Extremity\Internal\Gateway\WordPress\WordPress;

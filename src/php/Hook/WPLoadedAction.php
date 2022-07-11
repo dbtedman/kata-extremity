@@ -1,6 +1,6 @@
 <?php
 
-namespace DBTedman\Extremity\Action;
+namespace DBTedman\Extremity\Hook;
 
 use DBTedman\Extremity\Internal\Gateway\WordPress\WordPress;
 
